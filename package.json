@@ -1,0 +1,14 @@
+{
+  "name": "mediapp",
+  "version": "1.0.0",
+  "description": "Projeto da disciplina \"Programacao II\" da Descomplica Faculdade Digital",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ranieriiuri",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
