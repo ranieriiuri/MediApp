@@ -1,5 +1,5 @@
-const prescriptionController = {
+import {  express  } from "express";
 
-}
+let router = express.Router();
 
-export default prescriptionController;
+export default router;
