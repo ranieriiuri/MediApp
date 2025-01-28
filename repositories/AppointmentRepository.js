@@ -1,6 +1,6 @@
 import {  Appointment  } from "../models/Appointment.js";
 
-const getAllAppointment = async () => {
+const getAllAppointments = async () => {
     return await Appointment.find();
 }
 
@@ -43,7 +43,7 @@ const deleteAppointment = async (id) => {
 
 //juntando todos na var q será exposta !
 const appointmentRepository = {
-    getAllAppointment,
+    getAllAppointments,
     getAppointment,
     saveAppointment,
     updateAppointment,
