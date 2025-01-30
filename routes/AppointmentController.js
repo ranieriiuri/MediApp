@@ -6,7 +6,7 @@ let router = express.Router();
 //pegar todos
 router.get('/appointments', async (req, res) => {
     try {
-        const appointments = await AppoitmentService.getAllAppointments();
+        const appointments = await AppointmentService.getAllAppointments();
         res.send(appointments);
     } catch (error) {
         console.log(error);
