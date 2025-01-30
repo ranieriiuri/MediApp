@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 
 //Usamos o schema do mongoose pra criar nossos  modelos
 const doctorSchema = new Schema({
-    doctorId: {
-        type: String,
-        required: ['DoctorId is required.']
-    },
     name: {
         type: String,
         required: [true, 'Doctor name is required.']
