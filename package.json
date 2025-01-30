@@ -2,6 +2,7 @@
   "name": "mediapp",
   "version": "1.0.0",
   "description": "Projeto da disciplina \"Programacao II\" da Descomplica Faculdade Digital",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

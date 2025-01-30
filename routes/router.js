@@ -1,8 +1,8 @@
-import {  express  } from "express";
-import appointmentController from "./appointmentController";
-import doctorController from "./DoctorController";
-import pacientController from "./PacientController";
-import prescriptionController from "./PrescriptionController";
+import express from "express";
+import appointmentController from "./AppointmentController.js";
+// import doctorController from "./DoctorController";
+// import pacientController from "./PacientController";
+// import prescriptionController from "./PrescriptionController";
 
 
 //Essa var utitliza um recurso do express p fazer o roteamento automático
@@ -18,9 +18,10 @@ router.get(
 
 //estamos basicamente falando pro router do express p usar o / para controlar todas as funções da aplicação
 router.use("/", appointmentController);
-router.use("/", doctorController);
-router.use("/", pacientController);
-router.use("/", prescriptionController);
+// *Descomentar rotas abaixo conforme andamento do projeto!
+// router.use("/", doctorController);
+// router.use("/", pacientController);
+// router.use("/", prescriptionController);
 
 
 export default router;
