@@ -13,7 +13,7 @@ db.on('error', console.error.bind(console, 'connection error: '));
 //Nessa função do mongoose.connection definimos que, uma vez conectado, dispare a callback que confirma!
 db.once(
     'open', function() {
-        console.log('database conected successfully!')
+        console.log('database connected successfully!')
     }
 );
 
