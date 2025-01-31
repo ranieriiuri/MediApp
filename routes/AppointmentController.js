@@ -63,4 +63,28 @@ router.delete('/appointments/:id', async(req, res) => {
     }
 });
 
+//remarcação de consulta
+router.put('/reschedule/:id', async(req,res) => {
+    //pega o id pelo params e o date do body e armazena nas vars, via desestruturação
+    const {id} = req.params;
+    const {date} = req.body;
+    try {
+        //pega o id passado e o busca e traz usando o método do service
+        let appointment = await AppointmentService.getAppointment(id);
+        //seta o date desse id com o date pego na var acima(passado no body da req)
+        appointment.date = date;
+
+        //e usa o método de atualizar do service passando o id q será atualizado e a nova data
+        appointment = await AppointmentService.updateAppointment(id, {date});
+        //envia como res essa atualização
+        res.send(appointment);
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+}
+
+)
+
 export default router;

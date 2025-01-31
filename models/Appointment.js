@@ -25,9 +25,10 @@ const appointmentSchema = new Schema({
         required: [true, 'PacientId is required.'],
         validate: {
             validator: function(v) {
-                const id = new mongoose.Types.ObjectId(v); //convertendo uma string em obj ID para ser encontrado no DB
-                return Pacient.exists({_id: id}); //se o Id passado e convertido acima bate com o id de algum médico no db, retorna
+                const id = new mongoose.Types.ObjectId(v); //convertendo os dados da string recebida na req de criação em obj ID para ser encontrado no DB pelo mongoose
+                return Pacient.exists({_id: id}); //se o Id passado e convertido acima bate com o id de algum paciente existente no db, retorna
             },
+            //senão, retorna uma msg de erro
             message: props =>
                 `PacientID ${props.value} not found.`
         }
