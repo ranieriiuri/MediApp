@@ -42,9 +42,12 @@ const deleteDoctor = async (id) => {
     }
 }
 
-// login
+// login (fora o CRUD normal, essa é a única função q precisamos)
+
+//essa func q recebe a chamada de solicitação de login do authMiddleware p confirmar se quem está solicitando está com o token valido de médico
 const getDoctorByLogin = async (login) => {
     try {
+        // findOne é uma func padrao q busca no DB se esse campo é uma informação 'unique' válida (existente)
         return await Doctor.findOne({"login": login});
     } catch (error) {
         throw new Error(error);
