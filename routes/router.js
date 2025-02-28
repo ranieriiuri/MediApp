@@ -1,10 +1,13 @@
+import bcrypt from 'bcrypt';
 import express from "express";
+import verifyToken from '../middleware/authMiddleware.js';
+import doctorService from "../services/DoctorService.js";
 import appointmentController from "./AppointmentController.js";
 import doctorController from "./DoctorController.js";
 import pacientController from "./PacientController.js";
 import prescriptionController from "./PrescriptionController.js";
-import verifyToken from '../middleware/authMiddleware.js';
 import jwt from 'jsonwebtoken';
+
 
 //ranieriiuri's testing
 
