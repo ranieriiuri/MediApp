@@ -6,6 +6,8 @@ import prescriptionController from "./PrescriptionController.js";
 import verifyToken from '../middleware/authMiddleware.js';
 import jwt from 'jsonwebtoken';
 
+//ranieriiuri's testing
+
 //Essa var utitliza um recurso do express p fazer o roteamento automático
 let router = express.Router();
 
