@@ -4,7 +4,7 @@ import doctorController from "./DoctorController.js";
 import pacientController from "./PacientController.js";
 import prescriptionController from "./PrescriptionController.js";
 import verifyToken from '../middleware/authMiddleware.js';
-
+import jwt from 'jsonwebtoken';
 
 //Essa var utitliza um recurso do express p fazer o roteamento automático
 let router = express.Router();
