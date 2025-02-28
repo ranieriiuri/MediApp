@@ -12,7 +12,7 @@ let router = express.Router();
 const storage = multer.diskStorage(
     {
       destination: function(req, file, cb){
-        cb(null, './MediApp/prescriptions/');
+        cb(null, '../prescriptions/');
       },
       filename: function(req, file, cb){
         cb(null, file.originalname);
@@ -30,7 +30,7 @@ const storage = multer.diskStorage(
       const { id } = req.params;
       let prescription = await PrescriptionService.getPrescription(id);
   
-      const file = "./MediApp/src/prescriptions/" + req.file.originalname;
+      const file = "../prescriptions" + req.file.originalname;
       prescription = await PrescriptionService.updatePrescription(id, { file });
   
       return res.status(200).send(prescription);
@@ -43,12 +43,15 @@ const storage = multer.diskStorage(
   
   );
   
+  //leitura do arq
   router.get('/readPrescription/:id', async(req,res) => {
     const { id } = req.params;
   
     try {
       const prescription = await PrescriptionService.getPrescription(id);
+      //esse metodo do process considera nosso diretorio atual (pode ser q precise ser ajustado), já a resolve é o metodo p encontrar a prescrição correta
       let filePath = path.resolve(process.cwd() + "/../" + prescription.file);
+      //se tudo der certo, retorna o caminho pra ler a prescrição e não a prescrição em si
       res.status(200).sendFile(filePath);
       
     } catch (error) {
@@ -123,7 +126,7 @@ const storage = multer.diskStorage(
       const prescription = await PrescriptionService.getPrescription(id);
       let generatedPrescription = await PrescriptionService.generatePrescriptionFile(prescription);
   
-      const file = "./src/prescriptions/" + id + ".pdf";
+      const file = "../prescriptions/" + id + ".pdf";
       generatedPrescription = await PrescriptionService.updatePrescription(id, { file });
   
       res.send(generatedPrescription);
