@@ -115,6 +115,8 @@ const storage = multer.diskStorage(
     }
   });
   
+  // roteamento para suprir a req 
+  // de gerar prescrição em PDF
   router.get('/generatePrescription/:id', async(req, res) => {
     const { id } = req.params;
     try {

@@ -1,4 +1,6 @@
 import {  mongoose  } from 'mongoose';
+import Pacient from './Pacient';
+import Doctor from './Doctor';
 
 const Schema = mongoose.Schema;
 

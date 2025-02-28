@@ -28,13 +28,14 @@ const deletePrescription = async (id) => {
 
 // Nessa const/método definimos como o documento PDF da prescrição será definido...
 const generatePrescriptionFile = async(prescription) => {
+    //os dados serão todos pegos pela 'consulta', inclusive os dados do paciente e do médico da consulta
     const appointment = await AppointmentService.getAppointment(prescription.appointmentId);
     const pacient = await PacientService.getPacient(appointment.pacientId);
     const doctor = await DoctorService.getDoctor(appointment.doctorId);
 
     const id = prescription._id;
     const document = new PDFDocument({font: 'Courier'});
-    const filePath = "./prescriptions/"+ id + ".pdf";
+    const filePath = "../prescriptions/"+ id + ".pdf";
 
     // essa função 'pipe' usamos p direcionar a saída gerada pelo documento p um arquivo ou fluxo de dados. a 'fs.createWriteStream' cria um fluxo de escrita p o arq localizado em filePath ( o caminho onde o PDF será salvo)
     document.pipe(fs.createWriteStream(filePath));
