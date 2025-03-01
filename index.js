@@ -7,7 +7,7 @@ import cors from "cors";
 
 const app = express();
 const { json, urlencoded } = pkg;
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(json());
 app.use(urlencoded({extended: true}));
