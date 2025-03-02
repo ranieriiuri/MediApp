@@ -2,7 +2,7 @@ import express from "express";
 import pkg from "body-parser";
 import router from "./routes/router.js";
 //import db from "./database/database.js";
-import cors from "cors";
+import cors from "cors"; //p permissão de chamadas e ligação 'front to back'
 
 
 const app = express();
