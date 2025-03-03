@@ -22,7 +22,7 @@ export default function Home() {
 
       //mapeamento p chamada de login p backend (ainda sem token, pq aqui é q ele é gerado)
       const add = await fetch('http://localhost:3001/login', {
-        method: 'POST',
+        method: 'POST', //POST é o método adequado p envio de dados e tbm p buscar informações sensíveis (como login e senha), já que o GET os expõe na url
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
 

@@ -1,7 +1,7 @@
 import express from "express";
 import pkg from "body-parser";
 import router from "./routes/router.js";
-//import db from "./database/database.js";
+import db from "./database/database.js"; //mesmo sem usar diretamente, precisamos importar o db p carregar as definições de ligação com o mongodb feitos nele
 import cors from "cors"; //p permissão de chamadas e ligação 'front to back'
 
 

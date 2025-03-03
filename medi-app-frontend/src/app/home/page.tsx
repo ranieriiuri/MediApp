@@ -8,6 +8,9 @@ export default function Home(){
             <div>
                 <Link href="/doctor/create">Create new doctor</Link>
             </div>
+            <div>
+                <Link href="/doctor/list">List all doctors</Link>
+            </div>
             
             <div>
                 <Link href="/pacient/create">Create new pacient</Link>
